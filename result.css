@@ -1,0 +1,38 @@
+/* Additional CSS for the "Result" section */
+#result {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+#result p {
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#result table th, #result table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#result table th {
+    background-color: #333;
+    color: #fff;
+}

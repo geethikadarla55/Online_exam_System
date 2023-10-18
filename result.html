@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+</head>
+<body>
+  <h1>Quiz Results</h1>
+
+  <div id="score"></div>
+  <div id="answers"></div>
+
+  <script>
+    const scoreElement = document.getElementById('score');
+    const answersElement = document.getElementById('answers');
+
+    // Retrieve the score from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = parseInt(urlParams.get('score'), 10);
+
+    // Retrieve and parse the answers array from the query parameter
+    const answersParam = urlParams.get('answers');
+    const answers = JSON.parse(decodeURIComponent(answersParam));
+
+    // Display the score
+    scoreElement.innerHTML = `Your Score: ${score} out of ${quizData.length}`;
+
+    // Display the answers
+    answers.forEach((answer, index) => {
+      const answerElement = document.createElement('p');
+      answerElement.innerHTML = `
+        <strong>Question ${index + 1}:</strong><br>
+        Question: ${answer.question}<br>
+        Your Answer: ${answer.selectedAnswer}<br>
+        Correct Answer: ${answer.correctAnswer}<br>
+        <br>
+      `;
+      answersElement.appendChild(answerElement);
+    });
+  </script>
+</body>
+</html>
